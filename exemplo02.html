@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>formatando campos do Formulário / Máscara - jQuery Mask</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label>CPF</label>
+                <input id="cpf" type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+                <label>CNPJ</label>
+                <input id="cnpj" type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+                <label>CEP</label>
+                <input id="cep" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label>Altura / Peso</label>
+                <input id="altura" type="text" class="form-control" maxlength="5">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Moeda / Dinheiro</label>
+                <input id="dinheiro" type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Telefone</label>
+                <input id="telefone" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label>Data</label>
+                <input id="data" type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Hora</label>
+                <input id="hora" type="text" class="form-control">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#cpf").keypress(function() {
+            $(this).mask('000.000.000-00');
+        });
+        $("#cnpj").keypress(function() {
+            $(this).mask('00.000.000/0000-00');
+        });
+        $("#cep").keypress(function() {
+            $(this).mask('00.000-000');
+        });
+        $("#altura").keypress(function() {
+            $(this).mask('90,00', {reverse: true});
+        });        
+        $("#dinheiro").keypress(function() {
+            $(this).mask('R$ #.##0,00', {reverse: true});
+        });        
+        $("#telefone").keypress(function() {
+            $(this).mask('(00) 0000-00009')
+        });       
+        $("#data").keypress(function() {
+            $(this).mask('00/00/0000');
+        });       
+        $("#hora").keypress(function() {
+           $(this).mask('00h 00m');
+        });
+        
+    </script>
+
+</body>
+
+</html>
